@@ -4,9 +4,9 @@ PImage victory;
 PImage bg;
 
 int i_rank,j_rank;
-int[] i_teemo=new int[50];
-int[] j_teemo=new int[50];
-int[] life=new int[50];
+int[] i_teemo = new int[50];
+int[] j_teemo = new int[50];
+int[] life = new int[50];
 int score,k;
 
 void setup(){
