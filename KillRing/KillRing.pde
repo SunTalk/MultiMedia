@@ -1,4 +1,3 @@
-
 Ring[] rings;
 int numRings = 50;
 int currentRing = 0;
