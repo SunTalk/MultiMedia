@@ -5,6 +5,7 @@ class Snake {
 	int x,y;
 	char path = 'd';
 	int stop = 0;
+	int check_run = 0;
 
 	void start_snake(int seat_x,int seat_y){
 		on = true;
@@ -13,14 +14,24 @@ class Snake {
 	}
 
 	void turn_snake(char wasd){
-		if( wasd == 'w' && path != 's' )
-			path = wasd;
-		else if( wasd == 's' && path != 'w' )
-			path = wasd;
-		else if( wasd == 'a' && path != 'd' )
-			path = wasd;
-		else if( wasd == 'd' && path != 'a' )
-			path = wasd;
+		if( check_run == 0 ){
+			if( wasd == 'w' && path != 's' ){
+				path = wasd;
+				check_run = 30;
+			}
+			else if( wasd == 's' && path != 'w' ){
+				path = wasd;
+				check_run = 30;
+			}
+			else if( wasd == 'a' && path != 'd' ){
+				path = wasd;
+				check_run = 30;
+			}
+			else if( wasd == 'd' && path != 'a' ){
+				path = wasd;
+				check_run = 30;
+			}
+		}
 	}
 
 	void follow_snake(int pre_x,int pre_y){
@@ -53,6 +64,7 @@ class Snake {
 			else{
 				stop = stop - 30;
 			}
+			check_run = 0;
 		}
 	}
 
